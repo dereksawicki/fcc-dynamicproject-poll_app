@@ -1,0 +1,28 @@
+<div class="head">
+	<div class="container">
+			<h1>My Polls</h1>
+			<p>Create custom polls with live results</p>
+			<a routerLink="/" class="btn btn-primary">New Poll</a>
+	</div>
+</div>
+
+<div class="container">
+
+	<ul>
+		<li *ngFor="let poll of polls" >
+			<div class="row">
+				<div class="col pull-left">
+					<a  [routerLink]="['/poll-detail', poll.id]">
+							{{ poll.body }}
+					</a>
+				</div>
+				<div class="col pull-right">
+					<button class="btn btn-danger" (click)="delete(poll.id)">Delete</button>
+				</div>
+
+			</div>
+		</li>
+	</ul>
+
+
+</div>

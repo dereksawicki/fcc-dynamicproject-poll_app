@@ -1,0 +1,35 @@
+<div class="head">
+  <div class="container">
+      <h1>VotePlex</h1>
+      <p>Create custom polls with live results</p>
+  </div>
+</div>
+
+<div class="container">
+    <h1>Sign-up</h1>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value, signupForm.valid)">
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username">
+
+         <div [hidden]="signupForm.controls.username.valid || signupForm.controls.username.pristine"
+         	class="alert alert-danger">
+         	Name is required (minimum 5 characters).
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password">
+
+         <div [hidden]="signupForm.controls.password.valid || signupForm.controls.password.pristine"
+         	class="alert alert-danger">
+         	Password is required
+         </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!signupForm.valid">Signup</button>
+    </form>
+</div>

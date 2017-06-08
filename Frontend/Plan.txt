@@ -1,0 +1,10 @@
+Components:
+-navigation
+-signup
+-login
+-home
+-new poll
+-my polls
+
+Todo:
+-create homepage (navigation, signup button)

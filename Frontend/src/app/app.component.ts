@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+import { NavComponent } from './nav.component';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  template: `
+	<navigation></navigation>
+	<router-outlet></router-outlet>
+  `,
 })
 export class AppComponent  { name = 'Angular'; }

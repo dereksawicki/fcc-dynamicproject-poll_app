@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Create a New Poll</h1>
+
+
+      <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+
+        <label for="quetion">Poll Title</label>
+        <input type="text"
+               id="quetion"
+               name="question" ngModel>
+
+        <div  *ngFor="let poi of poll_opt_ids">
+          <label for=poi>Option {{poi}}</label>
+          <input type="text"
+                 id="{{poi}}"
+                 name="{{poi}}" ngModel>
+
+        </div>
+
+        <a class="btn btn-primary" (click)="addOption()">Add Option</a>
+
+        <button type="submit" class="btn btn-success">Create</button>
+
+      </form>
+
+</div>

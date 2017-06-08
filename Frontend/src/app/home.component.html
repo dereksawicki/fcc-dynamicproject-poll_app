@@ -1,0 +1,32 @@
+
+<div class="head">
+	<div class="container">
+		<div *ngIf="!authService.isAuthenticated()">
+			<h1>VotePlex</h1>
+			<p>Create custom polls with live results</p>
+		</div>
+		<div *ngIf="authService.isAuthenticated()">
+			<h1>Dashboard</h1>
+			<p>What would you like to do today?</p>
+		</div>
+
+			<a *ngIf="!authService.isAuthenticated()" routerLink="/signup" type="button" class="btn btn-success">Sign Up</a>
+			<a *ngIf="authService.isAuthenticated()" routerLink="/mypolls" class="btn btn-primary">My polls</a>
+	</div>
+</div>
+
+<div class="container" *ngIf="!authService.isAuthenticated()">
+	<div class="row">
+		<div class="col">
+			<p>Live Results</p>
+		</div>
+		<div class="col">
+			<p>Works Everywhere </p>
+		</div>
+		<div class="col">
+			<p>Social Integration</p>
+		</div>
+	</div>
+</div>
+
+<poll-form *ngIf="authService.isAuthenticated()"></poll-form>

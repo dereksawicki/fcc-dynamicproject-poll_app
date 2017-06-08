@@ -8,26 +8,29 @@ SERVER-SIDE-REQUIREMENTS
 -return list of user's polls
 -return poll detail
 
-============================================================================
+=======================================================================
 
 DATABASE OUTLINE
 
-Table - Users
--each row is a user
--userid, email, password
--primary key is user id
-ex row: 
-	12, john@email.com, hunter2
+Table - users
+	int id
+	varchar username
+	varchar pwd_hash
 
-Table - poll-Collection
--each row is a poll
--primary key is identical to the user id
--each poll belongs to a poll-collection
-ex row:
-	12, 
+Table - poll_questions
+	int id
+	int userid (foreign key)
+	varchar body
+	datetime created_at
+	datetime updated_at
 
-Table - poll-detail
--each row is a data item
+Table - poll_answers
+	int id
+	varchar body
+	int votes default 0
+	int question_id(foreign key)
+	datetime created_at
+	datetime updated_at
 
-Table - poll-results
+
 

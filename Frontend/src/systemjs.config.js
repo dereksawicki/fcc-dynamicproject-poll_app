@@ -25,7 +25,16 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+       "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt.js",
+
+      '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      'angular2-chartjs': 'npm:angular2-chartjs',
+      'chart.js': 'npm:chart.js/dist/Chart.bundle.js',
+      'ng2-charts': 'npm:ng2-charts/bundles/ng2-charts.umd.js' 
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -39,7 +48,12 @@
       },
       rxjs: {
         defaultExtension: 'js'
+      },
+     'angular2-chartjs': {
+        main: './dist/index.js',
+        defaultExtension: 'js'
       }
+
     }
   });
 })(this);

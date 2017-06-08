@@ -1,0 +1,33 @@
+
+<div class="head">
+	<div class="container">
+		<div *ngIf="!authService.isAuthenticated()">
+			<h1>VotePlex</h1>
+			<p>Create custom polls with live results</p>
+		</div>
+		<div *ngIf="authService.isAuthenticated()">
+			<h1>Dashboard</h1>
+			<p>What would you like to do today?</p>
+		</div>
+
+			<a *ngIf="!authService.isAuthenticated()" routerLink="/signup" type="button" class="btn btn-success">Sign Up</a>
+			<a *ngIf="authService.isAuthenticated()" routerLink="/mypolls" class="btn btn-primary">My polls</a>
+	</div>
+</div>
+
+<div class=container>
+	<p> {{has_voted}} </p>
+
+	<!--<h1>{{ poll.question }}</h1>-->
+	<vote *ngIf="!has_voted" [question_id]=question_id (userVoted)="handleUserVoted($event)"></vote>
+
+    <canvas baseChart *ngIf="has_voted"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+
+    <p *ngIf="has_voted"> You have already cast your vote </p>
+</div>

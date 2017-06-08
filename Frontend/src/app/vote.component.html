@@ -1,0 +1,28 @@
+<div class="container">
+
+	<h1>Vote</h1>
+
+	{{question_id}}
+
+	<form [formGroup]="voteForm" (ngSubmit)="vote(voteForm.value['vote_option'])">
+<!--
+		<div *ngFor="let lab of labels">
+			<label 	for="">{{ lab }}</label>
+			<input 	type="radio"
+					id=lab
+					[formControl]="voteForm.controls[lab]">
+		</div>
+		-->
+		<div *ngFor="let ans of answers">
+			<label>{{ans.body}}</label>
+			<input 	type="radio"
+					formControlName="vote_option"
+					value= {{ans.id}}>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Vote</button>
+	
+	</form>
+
+
+</div>
