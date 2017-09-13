@@ -1,0 +1,28 @@
+TODO:
+FRONT END
+[x] Initial setup
+	-get flask and angular set up
+[x] Signup Page
+	-Send POST request from angular, receieve it on flask backend and
+	 update the database
+[x] Login/Logout buttons
+[x] sessions, authentication
+-bcrypt passwords
+[x] View polls
+[x] View poll detail
+[x] delete poll
+[x] add add-options-button to poll creation form
+
+SERVER-SIDE
+[x]user authentication
+[x]login, signup
+[x]return list of user's polls
+[x]return poll detail
+[x]allow user to vote in a poll
+[x]prevent multiple voting
+
+Todo: 
+-make polls publically viewable
+-on creation, give user a url for the new public poll
+-deploy to heroku
+
