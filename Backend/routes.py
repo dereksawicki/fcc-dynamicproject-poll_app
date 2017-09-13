@@ -13,7 +13,7 @@ import json
 #
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:spoonlamp@localhost:5432/Poll_App'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:[PASSWORD]@localhost:5432/Poll_App'
 db.init_app(app)
 CORS(app)
 app.secret_key = "development-key"
